@@ -1,0 +1,23 @@
+
+.o_filter_condition {
+    select:not(:first-child) {
+        margin-top: 5px;
+    }
+}
+
+.row {
+    .o_field_widget.o_readonly_modifier {
+        padding-top: calc(0.375rem + 1px);
+        padding-bottom: calc(0.375rem + 1px - 5px);
+    }
+}
+
+.o_input input {
+    border: none !important;
+}
+
+.o_form_status_indicator_buttons {
+    button {
+        margin-right: 0.5rem;
+    }
+}

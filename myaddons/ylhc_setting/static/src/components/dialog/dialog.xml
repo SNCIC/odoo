@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- extend web.Dialog -->
+    <t t-name="web.ActionDialog" t-inherit="web.ActionDialog" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('modal-content')]" position="attributes">
+            <attribute name="t-attf-class">modal-content crax {{dialog_animation_in_style? dialog_animation_in_style: ''}}</attribute>
+        </xpath>
+    </t>
+
+</templates>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ylhc_multi_tab.tab">
+        <div class="ylhc_multi_tab_container" t-ref="root">
+            <div class="ylhc_multi_tab" t-ref="tabs">
+            
+                <div class="ylhc_tab_control ylhc_icon_prev" t-on-click.stop="_on_multi_tab_prev">
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20"
+                         height="20">
+                        <path d="M269.25 512l271.53-271.53a32 32 0 0 0-45.25-45.25L201.37 489.38a32 32 0 0 0 0 45.25l294.16 294.16a32 32 0 0 0 45.25-45.25z"
+                              fill="#adb5bd"/>
+                        <path d="M551.1 512l271.53-271.53a32 32 0 0 0-45.26-45.25L483.22 489.38a32 32 0 0 0 0 45.25l294.15 294.16a32 32 0 1 0 45.26-45.25z"
+                              fill="#adb5bd"/>
+                    </svg>
+                </div>
+
+                <div class="ylhc_tab_control ylhc_icon_next" t-on-click.stop="_on_multi_tab_next">
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20"
+                         height="20">
+                        <path d="M483.22 240.47L754.73 512 483.22 783.53a32 32 0 0 0 45.25 45.25l294.15-294.15a32 32 0 0 0 0-45.26L528.47 195.22a32 32 0 0 0-45.25 45.25z"
+                              fill="#adb5bd"/>
+                        <path d="M540.78 534.63a32 32 0 0 0 0-45.26L246.63 195.22a32 32 0 0 0-45.25 45.25L472.89 512 201.38 783.53a32 32 0 0 0 45.25 45.25z"
+                              fill="#adb5bd"/>
+                    </svg>
+                </div>
+                <Dropdown position="'bottom-end'">
+                    <div class="ylhc_tab_control ylhc_icon_down">
+                        <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20">
+                            <path fill="#adb5bd"
+                                    d="M830.24 340.688l11.328 11.312a16 16 0 0 1 0 22.624L530.448 685.76a16 16 0 0 1-22.64 0L196.688 374.624a16 16 0 0 1 0-22.624l11.312-11.312a16 16 0 0 1 22.624 0l288.496 288.496 288.512-288.496a16 16 0 0 1 22.624 0z"/>
+                        </svg>
+                    </div>
+                    <t t-set-slot="content">
+                        <DropdownItem class="'ylhc_close_cur_tab'" onSelected="() => this._close_current_action()">
+                            Close Current Tab
+                        </DropdownItem>
+                        <DropdownItem class="'ylhc_close_other_tabs'" onSelected="() => this._close_other_action()">
+                            Close Other Tabs
+                        </DropdownItem>
+                        <DropdownItem class="'ylhc_close_all_tabs'" onSelected="() => this._close_all_action()">
+                            Close All Tabs
+                        </DropdownItem>
+                    </t>
+                </Dropdown>
+                <div class="ylhc_tab_scroll">
+                    <ul class="ylhc_page_items tab_container" t-ref="tab_container">
+                        <li t-foreach="props.action_infos" 
+                            t-as="action_info"
+                            t-if="action_info.id"
+                            t-key="action_info.id"
+                            t-att-class="{'active': action_info.active, 'ylhc_page_tab_item': true}"
+                            t-on-click.stop="() => this._on_click_tab_item(action_info)">
+                            <span><t t-esc="_get_display_name(action_info)" /></span>
+                            <span class="ylhc_tab_close" t-on-click.stop="() => this._on_click_tab_close(action_info)">
+                                <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="14"
+                                     height="14">
+                                    <path d="M556.8 512l265.6-265.6c12.8-12.8 12.8-32 0-44.8s-32-12.8-44.8 0L512 467.2 246.4 201.6c-12.8-12.8-32-12.8-44.8 0s-12.8 32 0 44.8l265.6 265.6-265.6 265.6c-12.8 12.8-12.8 32 0 44.8 6.4 6.4 12.8 9.6 22.4 9.6s16-3.2 22.4-9.6l265.6-265.6 265.6 265.6c6.4 6.4 16 9.6 22.4 9.6s16-3.2 22.4-9.6c12.8-12.8 12.8-32 0-44.8L556.8 512z"
+                                          fill="#bfbfbf"/>
+                                </svg>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </t>
+</templates>

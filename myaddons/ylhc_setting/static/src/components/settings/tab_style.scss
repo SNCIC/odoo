@@ -1,0 +1,74 @@
+
+// tab styl2, pills
+body.tab_style2,
+.theme_settings .tab_style2 {
+    .nav-tabs {
+        border-bottom: none;
+        .nav-item .nav-link {
+            border: none;
+            background: transparent;
+            &.active {
+                background-color: #2b90d9;
+                border: 1px solid #2b90d9;
+                border-radius: 5px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// tab style3, line
+body.tab_style3,
+.theme_settings .tab_style3 {
+    .nav-tabs .nav-item .nav-link {
+        border: none;
+        border-bottom: 3px solid transparent;
+        &.active {
+            background: transparent;
+            border-bottom-color: #2c3795 !important;
+        }
+    }
+}
+
+// tab style4, pills with arrow
+body.tab_style4,
+.theme_settings .tab_style4 {
+    .nav-tabs .nav-item .nav-link {
+        border: none;
+        background: transparent;
+        position: relative;
+        &.active {
+            background-color: #2b90d9;
+            color: #fff;
+            &::after {
+                content: '';
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid #2b90d9;
+                position: absolute;
+                bottom: -6px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+            }
+        }
+    }
+}
+
+// round pill
+body.tab_style5,
+.theme_settings .tab_style5 {
+    .nav-tabs {
+        border-bottom: none;
+        .nav-item .nav-link {
+            border: none;
+            background: transparent;
+            &.active {
+                background-color: #2b90d9;
+                border: 1px solid #2b90d9;
+                border-radius: 50px;
+                color: #fff;
+            }
+        }
+    }
+}

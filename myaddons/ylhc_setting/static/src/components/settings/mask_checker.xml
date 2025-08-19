@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- style setting -->
+    <t t-name="ylhc_setting.mask_checker">
+        <div t-attf-class="mask_checker {{props.extraClass}}" t-ref="root">
+            <t t-slot="default"/>
+            <div class="checker_mask d-flex align-items-center justify-content-center" t-on-click.prevent="_on_mask_click" t-on-mouseenter="(event) => this._on_mask_hover(event)" t-on-mouseleave="()=>this._on_mask_leave()">
+                <svg t-if="props.checked" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 85.504c-235.552 0-426.496 190.944-426.496 426.496s190.976 426.496 426.496 426.496c235.552 0 426.496-190.944 426.496-426.496s-190.944-426.496-426.496-426.496zM512 904.384c-216.352 0-392.384-176.032-392.384-392.384s176-392.384 392.384-392.384c216.352 0 392.384 176.032 392.384 392.384s-176 392.384-392.384 392.384z" p-id="2681" fill="#13227a"></path><path d="M725.344 359.712l-273.888 265.568-95.936-95.936c-9.984-9.984-26.176-9.984-36.192 0s-9.984 26.176 0 36.192l113.76 113.76c4.992 4.992 11.552 7.488 18.08 7.488 6.4 0 12.832-2.4 17.792-7.2l291.968-283.136c10.144-9.856 10.4-26.048 0.576-36.192-9.888-10.176-26.048-10.4-36.192-0.576z" p-id="2682" fill="#13227a"></path></svg>
+            </div>
+        </div>
+    </t>
+
+</templates>
+
+            

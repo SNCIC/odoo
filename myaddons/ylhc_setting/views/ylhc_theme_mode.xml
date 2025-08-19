@@ -1,0 +1,99 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="ylhc_setting.theme_mode_list">
+            <field name="name">Theme Mode</field>
+            <field name="model">ylhc_setting.theme_mode</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="theme_styles" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ylhc_setting.theme_mode_form">
+            <field name="name">Theme Mode</field>
+            <field name="model">ylhc_setting.theme_mode</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="container" style="padding:10px">
+                        <div class="form-group row">
+                            <label class="col-sm-2" for="name">name</label>
+                            <div class="col-sm-10">
+                                <field name="name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2" for="theme_styles">theme_styles</label>
+                            <div class="col-sm-10">
+                                <field name="theme_styles"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ylhc_setting.edit_theme_mode_form">
+            <field name="name">New Theme Mode</field>
+            <field name="model">ylhc_setting.theme_mode</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="container" style="padding:10px">
+
+                        <field name="owner" invisible="1" force_save="1" />
+
+                        <div class="form-group row">
+                            <label class="col-sm-2" for="name">name</label>
+                            <div class="col-sm-10">
+                                <field name="name"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2" for="sequence">sequence</label>
+                            <div class="col-sm-10">
+                                <field name="sequence"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ylhc_setting.new_theme_mode_form">
+            <field name="name">New Theme Mode</field>
+            <field name="model">ylhc_setting.theme_mode</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="container" style="padding:10px">
+
+                        <field name="owner" invisible="1" force_save="1" />
+
+                        <div class="form-group row">
+                            <label class="col-sm-2" for="name">name</label>
+                            <div class="col-sm-10">
+                                <field name="name"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2" for="sequence">sequence</label>
+                            <div class="col-sm-10">
+                                <field name="sequence"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ylhc_setting.theme_mode_act_window">
+            <field name="name">Theme Mode</field>
+            <field name="res_model">ylhc_setting.theme_mode</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

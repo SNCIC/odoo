@@ -1,0 +1,227 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ylhc_setting
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-24 12:25+0000\n"
+"PO-Revision-Date: 2024-07-24 12:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Side Bar"
+msgstr "侧边栏"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Button"
+msgstr "按钮"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Table Hover Color"
+msgstr "表格悬停颜色"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Table Visited Color"
+msgstr "表格访问颜色"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Table Selected Color"
+msgstr "表格选中颜色"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Side Bar Selected Background"
+msgstr "侧边栏选中背景"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Selected"
+msgstr "已选"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Primary Button"
+msgstr "主按钮"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Secondary Button"
+msgstr "次按钮"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Background"
+msgstr "背景"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Table"
+msgstr "表格"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Side Bar"
+msgstr "侧边栏"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Table Selected"
+msgstr "表格选中"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Table Visited"
+msgstr "表格访问"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Table Hover"
+msgstr "表格悬停"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Primary"
+msgstr "主色"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Secondary"
+msgstr "次色"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Background"
+msgstr "背景"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Side Bar Header"
+msgstr "项部"
+
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Primary Text"
+msgstr "主文本"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Primary Border"
+msgstr "主边框"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Primary Hover"
+msgstr "主悬停"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Primary Hover Text"
+msgstr "主悬停文本"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Primary Hover Border"
+msgstr "主悬停边框"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "次按钮"
+msgstr "次按钮"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Secondary Text"
+msgstr "次文本"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Secondary Border"
+msgstr "次边框"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Secondary Hover"
+msgstr "次悬停"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Secondary Hover Text"
+msgstr "次悬停文本"
+
+#. module: ylhc_setting
+#. odoo-javascript
+#: code:addons/ylhc_setting/static/src/components/customizer/theme_customizer.js:0
+#, python-format
+msgid "Secondary Hover Border"
+msgstr "次悬停边框"

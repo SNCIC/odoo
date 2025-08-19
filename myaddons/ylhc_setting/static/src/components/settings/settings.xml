@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <div t-name="ylhc_setting.theme_settings" class="theme_settings">
+        
+        <!-- button style -->
+        <ylhcAccordion title="'Button Style'">
+            <MaskChecker onChecked="() => this._on_style_checked('button', 'style1')" checked="state.button_style == 'style1'" extraClass="'button_style1'">
+                <button class="btn btn-primary button_style1">Primary</button>
+            </MaskChecker>
+            <!-- button style2 -->
+            <MaskChecker onChecked="() => this._on_style_checked('button', 'style2')" checked="state.button_style == 'style2'" extraClass="'button_style2'">
+                <button class="btn btn-primary button_style2">Primary</button>
+            </MaskChecker>
+            <!-- button style3 -->
+            <MaskChecker onChecked="() => this._on_style_checked('button', 'style3')" checked="state.button_style == 'style3'" extraClass="'button_style3'">
+                <button class="btn btn-primary button_style3">Primary</button>
+            </MaskChecker>
+            <!-- button style4 -->
+            <MaskChecker onChecked="() => this._on_style_checked('button', 'style4')" checked="state.button_style == 'style4'" extraClass="'button_style4'">
+                <button class="btn btn-primary button_style4">Primary</button>
+            </MaskChecker>
+            <!-- button style5 -->
+            <MaskChecker onChecked="() => this._on_style_checked('button', 'style5')" checked="state.button_style == 'style5'" extraClass="'button_style5'">
+                <button class="btn btn-primary button_style5">Primary</button>
+            </MaskChecker>
+            <!-- button style6 -->
+            <MaskChecker onChecked="() => this._on_style_checked('button', 'style6')" checked="state.button_style == 'style6'" extraClass="'button_style6'">
+                <button class="btn btn-primary button_style6">Primary</button>
+            </MaskChecker>
+        </ylhcAccordion>
+
+        <!-- input style -->
+        <ylhcAccordion title="'Input Style'">
+            <MaskChecker onChecked="() => this._on_style_checked('input', 'style1')" checked="state.input_style == 'style1'" extraClass="'input_style1'">
+                <input type="text" class="form-control input_style1 o_input" placeholder="Input Style" />
+            </MaskChecker>
+            <!-- input style2 -->
+            <MaskChecker onChecked="() => this._on_style_checked('input', 'style2')" checked="state.input_style == 'style2'" extraClass="'input_style2'">
+                <input type="text" class="form-control input_style2 o_input" placeholder="Input Style" />
+            </MaskChecker>
+            <!-- input style3 -->
+            <MaskChecker onChecked="() => this._on_style_checked('input', 'style3')" checked="state.input_style == 'style3'" extraClass="'input_style3'">
+                <input type="text" class="form-control input_style3 o_input" placeholder="Input Style" />
+            </MaskChecker>
+            <!-- input style4 -->
+            <MaskChecker onChecked="() => this._on_style_checked('input', 'style4')" checked="state.input_style == 'style4'" extraClass="'input_style4'">
+                <input type="text" class="form-control input_style4 o_input" placeholder="Input Style" />
+            </MaskChecker>
+            <!-- input style5 -->
+            <MaskChecker onChecked="() => this._on_style_checked('input', 'style5')" checked="state.input_style == 'style5'" extraClass="'input_style5'">
+                <input type="text" class="form-control input_style5 o_input" placeholder="Input Style" />
+            </MaskChecker>
+            <!-- input style6 -->
+            <MaskChecker onChecked="() => this._on_style_checked('input', 'style6')" checked="state.input_style == 'style6'" extraClass="'input_style6'">
+                <input type="text" class="form-control input_style6 o_input" placeholder="Input Style" />
+            </MaskChecker>
+            <!-- input style7 -->
+            <MaskChecker onChecked="() => this._on_style_checked('input', 'style7')" checked="state.input_style == 'style7'" extraClass="'input_style7'">
+                <input type="text" class="form-control input_style7 o_input" placeholder="Input Style" />
+            </MaskChecker>
+            <!-- input style8 -->
+            <MaskChecker onChecked="() => this._on_style_checked('input', 'style8')" checked="state.input_style == 'style8'" extraClass="'input_style8'">
+                <input type="text" class="form-control input_style8 o_input" placeholder="Input Style" />
+            </MaskChecker>
+        </ylhcAccordion>
+
+        <!-- loading -->
+        <ylhcAccordion title="'Loading'">
+            <div class="d-flex flex-wrap loading-container">
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style1')" checked="state.loading_style == 'style1'" extraClass="'loading_style1'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style1.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style2 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style2')" checked="state.loading_style == 'style2'" extraClass="'loading_style2'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style2.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style3 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style3')" checked="state.loading_style == 'style3'" extraClass="'loading_style3'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style3.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style4 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style4')" checked="state.loading_style == 'style4'" extraClass="'loading_style4'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style4.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style5 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style5')" checked="state.loading_style == 'style5'" extraClass="'loading_style5'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style5.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style6 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style6')" checked="state.loading_style == 'style6'" extraClass="'loading_style6'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style6.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style7 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style7')" checked="state.loading_style == 'style7'" extraClass="'loading_style7'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style7.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style8 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style8')" checked="state.loading_style == 'style8'" extraClass="'loading_style8'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style8.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style9 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style9')" checked="state.loading_style == 'style9'" extraClass="'loading_style9'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style9.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+                <!-- loading style10 -->
+                <MaskChecker onChecked="() => this._on_style_checked('loading', 'style10')" checked="state.loading_style == 'style10'" extraClass="'loading_style10'">
+                    <div class="loading_style">
+                        <img src="/ylhc_setting/static/loadings/loading_style10.svg" alt="loading"/>
+                    </div>
+                </MaskChecker>
+            </div>
+
+        </ylhcAccordion>
+
+        <!-- check box -->
+        <ylhcAccordion title="'Check Box'">
+            <MaskChecker onChecked="() => this._on_style_checked('checkbox', 'style1')" checked="state.checkbox_style == 'style1'" extraClass="'checkbox_style1'">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1" checked="1"/>
+                    <label class="form-check-label" for="flexCheckChecked1">
+                        Checked checkbox 1
+                    </label>
+                </div>
+            </MaskChecker>
+            <!-- checkbox style2 -->
+            <MaskChecker onChecked="() => this._on_style_checked('checkbox', 'style2')" checked="state.checkbox_style == 'style2'" extraClass="'checkbox_style2'">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked="1"/>
+                    <label class="form-check-label" for="flexCheckChecked2">
+                        Checked checkbox 2
+                    </label>
+                </div>
+            </MaskChecker>
+            <!-- checkbox style3 -->
+            <MaskChecker onChecked="() => this._on_style_checked('checkbox', 'style3')" checked="state.checkbox_style == 'style3'" extraClass="'checkbox_style3'">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3" checked="1"/>
+                    <label class="form-check-label" for="flexCheckChecked3">
+                        Checked checkbox 3
+                    </label>
+                </div>
+            </MaskChecker>
+            <!-- checkbox style4 -->
+            <MaskChecker onChecked="() => this._on_style_checked('checkbox', 'style4')" checked="state.checkbox_style == 'style4'" extraClass="'checkbox_style4'">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" checked="1"/>
+                    <label class="form-check-label" for="flexCheckChecked4">
+                        Checked checkbox 4
+                    </label>
+                </div>
+            </MaskChecker>
+            <!-- checkbox style5 -->
+            <MaskChecker onChecked="() => this._on_style_checked('checkbox', 'style5')" checked="state.checkbox_style == 'style5'" extraClass="'checkbox_style5'">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked5" checked="1"/>
+                    <label class="form-check-label" for="flexCheckChecked4">
+                        Checked checkbox 5
+                    </label>
+                </div>
+            </MaskChecker>
+            <!-- checkbox style6 -->
+            <MaskChecker onChecked="() => this._on_style_checked('checkbox', 'style6')" checked="state.checkbox_style == 'style6'" extraClass="'checkbox_style6'">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked6" checked="1"/>
+                    <label class="form-check-label" for="flexCheckChecked6">
+                        Checked checkbox 6
+                    </label>
+                </div>
+            </MaskChecker>
+        </ylhcAccordion>
+
+        <!-- radio -->
+        <ylhcAccordion title="'Radio'">
+            <MaskChecker onChecked="() => this._on_style_checked('radio', 'style1')" checked="state.radio_style == 'style1'" extraClass="'radio_style1'">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" checked="1"/>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Default radio 1
+                    </label>
+                </div>
+            </MaskChecker>
+            <!-- radio style2 -->
+            <MaskChecker onChecked="() => this._on_style_checked('radio', 'style2')" checked="state.radio_style == 'style2'" extraClass="'radio_style2'">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" checked="1"/>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Default radio 2
+                    </label>
+                </div>
+            </MaskChecker>
+            <MaskChecker onChecked="() => this._on_style_checked('radio', 'style3')" checked="state.radio_style == 'style3'" extraClass="'radio_style3'">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault3" checked="1"/>
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        Default radio 3
+                    </label> 
+                </div>
+            </MaskChecker>
+            <!-- radio style4 -->
+            <MaskChecker onChecked="() => this._on_style_checked('radio', 'style4')" checked="state.radio_style == 'style4'" extraClass="'radio_style4'">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault4" checked="1"/>
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        Default radio 4
+                    </label>
+                </div>
+            </MaskChecker>
+        </ylhcAccordion>
+        
+        <!-- separator -->
+        <ylhcAccordion title="'separator'">
+            <MaskChecker onChecked="() => this._on_style_checked('separator', 'style1')" checked="state.separator_style == 'style1'" extraClass="'separator_style1'">
+                <hr class="separator_style1"></hr>
+            </MaskChecker>
+            <!-- separator style2 -->
+            <MaskChecker onChecked="() => this._on_style_checked('separator', 'style2')" checked="state.separator_style == 'style2'" extraClass="'separator_style2'">
+                <hr class="separator_style2"></hr>
+            </MaskChecker>
+            <!-- separator style3 -->
+            <MaskChecker onChecked="() => this._on_style_checked('separator', 'style3')" checked="state.separator_style == 'style3'" extraClass="'separator_style3'">
+                <hr class="separator_style3"></hr>
+            </MaskChecker>
+            <!-- separator style4 -->
+            <MaskChecker onChecked="() => this._on_style_checked('separator', 'style4')" checked="state.separator_style == 'style4'" extraClass="'separator_style4'">
+                <hr class="ylhc_separator_style4"></hr>
+            </MaskChecker>
+        </ylhcAccordion>
+
+        <!-- tab -->
+        <ylhcAccordion title="'Tab'">
+            <!-- tab style1  -->
+            <MaskChecker onChecked="() => this._on_style_checked('tab', 'style1')" checked="state.tab_style == 'style1'" extraClass="'tab_style1'">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+            </MaskChecker>
+            <!-- tab style2 -->
+            <MaskChecker onChecked="() => this._on_style_checked('tab', 'style2')" checked="state.tab_style == 'style2'" extraClass="'tab_style2'">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+            </MaskChecker>
+            <!-- tab style3 -->
+            <MaskChecker onChecked="() => this._on_style_checked('tab', 'style3')" checked="state.tab_style == 'style3'" extraClass="'tab_style3'">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+            </MaskChecker>
+            <!-- tab style4 -->
+            <MaskChecker onChecked="() => this._on_style_checked('tab', 'style4')" checked="state.tab_style == 'style4'" extraClass="'tab_style4'">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+            </MaskChecker>
+            <!-- tab style5 -->
+            <MaskChecker onChecked="() => this._on_style_checked('tab', 'style5')" checked="state.tab_style == 'style5'" extraClass="'tab_style5'">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+            </MaskChecker>
+        </ylhcAccordion>
+
+        <!-- popup -->
+        <ylhcAccordion title="'Popup'">
+            <!-- animate__backInDown -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__backInDown')" 
+                checked="state.dialog_animation_in_style == 'animate__backInDown'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__backInDown', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__backInDown', false) }">
+                <div class="animate__animated">backInDown</div>
+            </MaskChecker>
+            <!-- backInLeft -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__backInLeft')"
+                checked="state.dialog_animation_in_style == 'animate__backInLeft'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__backInLeft', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__backInLeft', false) }">
+                <div class="animate__animated">backInLeft</div>
+            </MaskChecker>
+            <!-- backInRight -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__backInRight')"
+                checked="state.dialog_animation_in_style == 'animate__backInRight'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__backInRight', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__backInRight', false) }">
+                <div class="animate__animated">backInRight</div>
+            </MaskChecker>
+            <!-- animate__bounceInLeft -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__bounceInLeft')"
+                checked="state.dialog_animation_in_style == 'animate__bounceInLeft'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__bounceInLeft', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__bounceInLeft', false) }">
+                <div class="animate__animated">bounceInLeft</div>
+            </MaskChecker>
+            <!-- animate__bounceInRight -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__bounceInRight')"
+                checked="state.dialog_animation_in_style == 'animate__bounceInRight'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__bounceInRight', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__bounceInRight', false) }">
+                <div class="animate__animated">bounceInRight</div>
+            </MaskChecker>
+            <!-- animate__bounceInUp -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__bounceInUp')"
+                checked="state.dialog_animation_in_style == 'animate__bounceInUp'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__bounceInUp', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__bounceInUp', false) }">
+                <div class="animate__animated">bounceInUp</div>
+            </MaskChecker>
+            <!-- animate__fadeIn -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__fadeIn')"
+                checked="state.dialog_animation_in_style == 'animate__fadeIn'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__fadeIn', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__fadeIn', false) }">
+                <div class="animate__animated">fadeIn</div>
+            </MaskChecker>
+            <!-- animate__fadeInLeft -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__fadeInLeft')"
+                checked="state.dialog_animation_in_style == 'animate__fadeInLeft'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInLeft', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInLeft', false) }">
+                <div class="animate__animated">fadeInLeft</div>
+            </MaskChecker>
+            <!-- animate__fadeInLeft -->
+            <MaskChecker
+                onChecked="() => this._on_style_checked('popup', 'animate__fadeInRight')"
+                checked="state.dialog_animation_in_style == 'animate__fadeInRight'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInRight', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInRight', false) }">
+                <div class="animate__animated">fadeInRight</div>
+            </MaskChecker>
+            <!-- animate__fadeInLeftBig -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__fadeInLeftBig')"
+                checked="state.dialog_animation_in_style == 'animate__fadeInLeftBig'" 
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInLeftBig', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInLeftBig', false) }">
+                <div class="animate__animated">fadeInLeftBig</div>
+            </MaskChecker>
+            <!-- animate__fadeInRight -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__fadeInRightBig')"
+                checked="state.dialog_animation_in_style == 'animate__fadeInRightBig'" 
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInRightBig', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInRightBig', false) }">
+                <div class="animate__animated">fadeInRightBig</div>
+            </MaskChecker>
+            <!-- animate__fadeInRightBig -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__fadeInUp')"
+                checked="state.dialog_animation_in_style == 'animate__fadeInUp'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInUp', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInUp', false) }">
+                <div class="animate__animated">fadeInUp</div>
+            </MaskChecker>
+            <!-- animate__fadeInUp -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__fadeInUpBig')"
+                checked="state.dialog_animation_in_style == 'animate__fadeInUpBig'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInUpBig', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__fadeInUpBig', false) }">
+                <div class="animate__animated">fadeInUpBig</div>
+            </MaskChecker>
+            <!-- animate__fadeInUpBig -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__flipInX')"
+                checked="state.dialog_animation_in_style == 'animate__flipInX'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__flipInX', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__flipInX', false) }">
+                <div class="animate__animated">flipInX</div>
+            </MaskChecker>
+            <!-- animate__flipInX -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__flipInY')"
+                checked="state.dialog_animation_in_style == 'animate__flipInY'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__flipInY', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__flipInY', false) }">
+                <div class="animate__animated">flipInY</div>
+            </MaskChecker>
+            <!-- animate__flipInY -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__lightSpeedInLeft')"
+                checked="state.dialog_animation_in_style == 'animate__lightSpeedInLeft'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__lightSpeedInRight', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__lightSpeedInRight', false) }">
+                <div class="animate__animated">lightSpeedInRight</div>
+            </MaskChecker>
+            <!-- animate__lightSpeedInRight -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__lightSpeedInRight')"
+                checked="state.dialog_animation_in_style == 'animate__lightSpeedInRight'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__lightSpeedInLeft', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__lightSpeedInLeft', false) }">
+                <div class="animate__animated">lightSpeedInLeft</div>
+            </MaskChecker>
+            <!-- animate__rotateIn -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__rotateIn')"
+                checked="state.dialog_animation_in_style == 'animate__rotateIn'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__rotateIn', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__rotateIn', false) }">
+                <div class="animate__animated">rotateIn</div>
+            </MaskChecker>
+            <!-- animate__rotateInDownLeft -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__rotateInDownLeft')"
+                checked="state.dialog_animation_in_style == 'animate__rotateInDownLeft'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__rotateInDownLeft', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__rotateInDownLeft', false) }">
+                <div class="animate__animated">rotateInDownLeft</div>
+            </MaskChecker>
+            <!-- animate__rotateInDownRight -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__rotateInDownRight')"
+                checked="state.dialog_animation_in_style == 'animate__rotateInDownRight'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__rotateInDownRight', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__rotateInDownRight', false) }">
+                <div class="animate__animated">rotateInDownRight</div>
+            </MaskChecker>
+            <!-- animate__rotateInUpLeft -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__rotateInUpLeft')"
+                checked="state.dialog_animation_in_style == 'animate__rotateInUpLeft'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__rotateInUpLeft', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__rotateInUpLeft', false) }">
+                <div class="animate__animated">rotateInUpLeft</div>
+            </MaskChecker>
+            <!-- animate__rotateInUpRight -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__rotateInUpRight')"
+                checked="state.dialog_animation_in_style == 'animate__rotateInUpRight'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__rotateInUpRight', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__rotateInUpRight', false) }">
+                <div class="animate__animated">rotateInUpRight</div>
+            </MaskChecker>
+            <!-- animate__slideInUp -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__slideInUp')"
+                checked="state.dialog_animation_in_style == 'animate__slideInUp'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__slideInUp', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__slideInUp', false) }">
+                <div class="animate__animated">slideInUp</div>
+            </MaskChecker>
+            <!-- animate__slideInUp -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__slideInDown')"
+                checked="state.dialog_animation_in_style == 'animate__slideInDown'" 
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__slideInDown', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__slideInDown', false) }">
+                <div class="animate__animated">slideInDown</div>
+            </MaskChecker>
+            <!-- animate__slideInUp -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__slideInLeft')"
+                checked="state.dialog_animation_in_style == 'animate__slideInLeft'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__slideInLeft', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__slideInLeft', false) }">
+                <div class="animate__animated">slideInLeft</div>
+            </MaskChecker>
+            <!-- animate__slideInUp -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__slideInRight')"
+                checked="state.dialog_animation_in_style == 'animate__slideInRight'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__slideInRight', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__slideInRight', false) }">
+                <div class="animate__animated">slideInRight</div>
+            </MaskChecker>
+            <!-- animate__zoomIn -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__zoomIn')" 
+                checked="state.dialog_animation_in_style == 'animate__zoomIn'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__zoomIn', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__zoomIn', false) }">
+                <div class="animate__animated">zoomIn</div>
+            </MaskChecker>
+            <!-- animate__zoomInDown -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__zoomInDown')"
+                checked="state.dialog_animation_in_style == 'animate__zoomInDown'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__zoomInDown', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__zoomInDown', false) }">
+                <div class="animate__animated">zoomInDown</div>
+            </MaskChecker>
+            <!-- animate__zoomInLeft -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__zoomInLeft')"
+                checked="state.dialog_animation_in_style == 'animate__zoomInLeft'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__zoomInLeft', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__zoomInLeft', false) }">
+                <div class="animate__animated">zoomInLeft</div>
+            </MaskChecker>
+            <!-- animate__zoomInRight -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__zoomInRight')"
+                checked="state.dialog_animation_in_style == 'animate__zoomInRight'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__zoomInRight', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__zoomInRight', false) }">
+                <div class="animate__animated">zoomInRight</div>
+            </MaskChecker>
+            <!-- animate__zoomInUp -->
+            <MaskChecker 
+                onChecked="() => this._on_style_checked('popup', 'animate__zoomInUp')"
+                checked="state.dialog_animation_in_style == 'animate__zoomInUp'"
+                onEnter="(rootEl) => { this._on_animate(rootEl, 'animate__zoomInUp', true) }"
+                onLeave="(rootEl) => { this._on_animate(rootEl, 'animate__zoomInUp', false) }">
+                <div class="animate__animated">zoomInUp</div>
+            </MaskChecker>
+        </ylhcAccordion>
+
+        <!-- sidebar image -->
+        <ylhcAccordion title="'Sidebar Image'">
+            <div class="d-flex flex-row">
+                <MaskChecker onChecked="() => this._on_style_checked('sidebar_bk', 'style1')" checked="state.sidebar_bk_style == 'style1'">
+                    <div class="ylhc_sidebar_image_style1">
+                        <img src="/ylhc_setting/static/images/s1.png" />
+                    </div>
+                </MaskChecker>
+                <!-- sidebar image style2 -->
+                <MaskChecker onChecked="() => this._on_style_checked('sidebar_bk', 'style2')" checked="state.sidebar_bk_style == 'style2'">
+                    <div class="ylhc_sidebar_image_style2">
+                        <img src="/ylhc_setting/static/images/s2.png" />
+                    </div>
+                </MaskChecker>
+                <!-- sidebar image style3 -->
+                <MaskChecker onChecked="() => this._on_style_checked('sidebar_bk', 'style3')" checked="state.sidebar_bk_style == 'style3'">
+                    <div class="ylhc_sidebar_image_style3">
+                        <img src="/ylhc_setting/static/images/s3.png" />
+                    </div>
+                </MaskChecker>
+                <!-- sidebar image style4 -->
+                <MaskChecker onChecked="() => this._on_style_checked('sidebar_bk', 'style4')" checked="state.sidebar_bk_style == 'style4'">
+                    <div class="ylhc_sidebar_image_style4">
+                        <img src="/ylhc_setting/static/images/s4.png" />
+                    </div>
+                </MaskChecker>
+            </div>
+        </ylhcAccordion>
+
+    </div>
+
+</templates>

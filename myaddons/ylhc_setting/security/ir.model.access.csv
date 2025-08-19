@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+ylhc_setting_theme_style,ylhc_setting.theme_style,model_ylhc_setting_theme_style,base.group_user,1,1,1,1
+ylhc_setting_theme_mode,ylhc_setting.theme_mode,model_ylhc_setting_theme_mode,base.group_user,1,1,1,1
+ylhc_setting_setting,ylhc_setting.setting,model_ylhc_setting_setting,base.group_user,1,1,1,1
+ylhc_setting_theme_var,ylhc_setting.theme_var,model_ylhc_setting_theme_var,base.group_user,1,1,1,1
+ylhc_setting_setting_manager,ylhc_setting.setting_manager,model_ylhc_setting_setting_manager,base.group_user,1,1,1,1
+access_ylhc_setting_image_wizard,ylhc_setting.image_wizard,model_ylhc_setting_image_wizard,base.group_user,1,1,1,1
+access_ylhc_setting_favorite_menu',ylhc_setting.favorite_menu,model_ylhc_setting_favorite_menu,base.group_user,1,1,1,1
+ylhc_setting_theme_var,ylhc_setting.theme_var,model_ylhc_setting_theme_var,base.group_user,1,1,1,1

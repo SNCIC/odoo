@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- style setting -->
+    <div t-name="ylhc_setting.customizer" class="dropdown" t-ref="root">
+        <a role="button" href="#" class="customizer-toggle dropdown-toggle o-no-caret o-dropdown--narrow" t-on-click="_on_toggle_click">
+            <span class="fa fa-cog fa-fw fa-lg"/>
+        </a>
+        <t t-if="state.show_panel">
+            <t t-call="ylhc_setting.customizer.panel"/>
+        </t>
+    </div>
+
+    <!-- customizer -->
+    <div t-name="ylhc_setting.customizer.panel" class="customizer d-flex flex-column" t-att-class="{'show': state.show_panel}" ref="panelRef">
+        <a class="customizer-close" href="#" t-on-click="_on_close_click">
+            <i class="fa fa-close"/>
+        </a>
+        <div class="d-flex flex-column flex-fill" style="overflow: hidden;">
+
+            <div class="top_title">
+                <h4 class="text-uppercase mb-0">Theme Config</h4>
+            </div>
+
+            <div class="config_container flex-fill d-flex flex-row">
+
+                <!-- tab panes -->
+                <div class="tab_panes flex-fill">
+                    <div class="scroller">
+                    
+                        <!-- theme style -->
+                        <div class="styles_pane flex-fill d-flex flex-column" style="overflow-y: hidden" t-att-class="{'d-none': state.acitve_item == 'setting'}">
+
+                            <div class="theme_modes d-flex flex-column flex-fill" style="overflow-y: auto">
+                                <t t-set="theme_modes" t-value="user_setting.theme_modes"/>
+                                <div class="theme_modes d-flex flex-column d-none">
+                                    <div class="theme-modes-container d-flex flex-column flex-fill">
+                                        <t t-call="ylhc_setting.theme_mode_tab" />
+                                    </div>
+                                </div>
+                                <t t-foreach="theme_modes || []" t-as="theme_mode" t-key="theme_mode.id">
+                                    <t t-call="ylhc_setting.theme_mode" />
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tab items -->
+                <div class="tabs d-flex flex-column">
+                    <div class="tab_item" data-tab-id="columns" t-att-class="{'active': state.acitve_item == 'style'}" t-on-click.prevent="() => { this.state.acitve_item = 'style' }">
+                        <i class="fa fa-list-ul"></i>
+                        <span>Style</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- button for theme style -->
+            <div class="customizer-footer d-flex align-items-center justify-content-left" >
+                <t t-if="state.acitve_item == 'style'">
+                    <button class="preview-btn btn btn-primary ml-2" t-on-click="_on_preview_click">Preview</button>
+                    <button class="reset-preview-btn btn btn-primary ml-2" t-on-click='_on_reset_click' >Reset</button>
+                    <button class="save-btn btn btn-primary ml-2" t-on-click='_on_save_click'>Save</button>
+                </t>
+                <t t-if="state.acitve_item == 'setting'">
+                    <button class="save-btn btn btn-primary ml-2" t-on-click='_on_save_setting_click'>Save</button>
+                    <button class="reset-btn btn btn-primary ml-2" t-on-click='_on_cancel_setting_click'>Cancel</button>
+                </t>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Theme mode tab -->
+    <t t-name="ylhc_setting.theme_mode_tab">
+        <div class="form-check" t-foreach="theme_modes || []" t-as="theme_mode" t-key="theme_mode.id">
+            <input t-if="theme_mode.id == state.cur_mode_id" type="radio" name="theme_mode_radio" t-on-change.prevent="() => this._on_change_mode(theme_mode)" class="form-check-input" t-attf-id="theme-mode-{{theme_mode.id}}" checked="true" />
+            <input t-else="" type="radio" name="theme_mode_radio" t-on-change.prevent="() => this._on_change_mode(theme_mode)" class="form-check-input" t-attf-id="theme-mode-{{theme_mode.id}}" />
+            <label class="form-check-label" t-attf-for="theme-mode-{{theme_mode.id}}">
+                <t t-esc="theme_mode.name" />
+            </label>
+        </div>
+    </t>
+
+    <!-- theme mode tab pane -->
+    <t t-name="ylhc_setting.theme_mode">
+        <div class="theme-mode-container flex-column flex-fill" t-att-class="{'d-none': theme_mode.id != state.cur_mode_id}">
+            <div class="theme_styles d-flex flex-column">
+                <t t-set="theme_styles" t-value="theme_mode.theme_styles"/>
+                <!-- <t t-call="ylhc_setting.theme_style_tool_bar" /> -->
+                <ul class="nav nav-pills theme-style-contianer p-2">
+                    <t t-foreach="theme_styles" t-as="theme_style" t-key="theme_style.id">
+                        <t t-call="ylhc_setting.style_tab" />
+                    </t>
+                    <!-- add new theme style -->
+                    <li class="nav-item theme-style theme_style_tool_bar">
+                        <div class="theme_style_tab">
+                            <div class="style-preview-box d-flex flex-column align-items-center justify-content-center">
+                                <div class="d-flex align-items-center">
+                                    <a class="add_new_style tool_bar_item" t-on-click="(event)=>this._on_add_new_style(event)" href="#">
+                                        <i class="fa fa-plus-circle" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="tab-content flex-fill" style="margin:10px 0px; border-color: #3b425c">
+                    <t t-foreach="theme_styles" t-as="theme_style" t-key="theme_style.id">
+                        <t t-call="ylhc_setting.style_tab_pane" />
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ylhc_setting.style_tab_pane" >
+        <div class="tab-pane theme-style-tab-pane fade p-15" t-att-class="{'active': theme_style.id == state.cur_style_id, 'show': theme_style.id == state.cur_style_id}" t-att-id="'theme_style_tab_' + theme_style.id" role="tabpanel">
+            <div class="style_var_container d-flex flex-column justify-content-between p-2">
+                <t t-set="style_vars" t-value="theme_style.style_config &amp;&amp; theme_style.style_config.variables"/>
+                <t t-set="categories" t-value="theme_style.style_config &amp;&amp; theme_style.style_config.categories"/>
+                <t t-foreach="categories" t-as="category" t-key="category.name">
+                    <YlhcAccordion title="_t(category.name)">
+                        <t t-set="style_vars" t-value="get_category_vars(style_vars, category.name)"/>
+                        <t t-foreach="style_vars" t-as="style_var" t-key="style_var.name">
+                            <t t-call="ylhc_setting.style_var" />
+                        </t>
+                    </YlhcAccordion>
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ylhc_setting.style_tab" >
+        <li class="nav-item theme-style-nav-item">
+            <t t-set="identities" t-value="theme_style.style_config &amp;&amp; theme_style.style_config.identities || {}"/>
+            <a class="nav-link theme_style_tab" data-toggle="tab" t-attf-href="#theme_style_tab_{{theme_style.id}}" role="tab" t-att-class="{'active': state.cur_style_id == theme_style.id}" t-on-click.prevent="() => this._on_click_style_nav_item(theme_style)">
+                <div class="style-preview-box d-flex flex-row" t-attf-style="{{theme_style.background_image? 'background-image:url('+ theme_style.background_image +')': ''}}">
+                    <div class="sidebar-box" t-attf-style="background-color: {{identities.side_bar_background}}; width:20px" />
+                    <div class="main-box d-flex flex-column flex-fill">
+                        <div class="preview-body-box flex-fill" t-attf-style="background-color: {{identities.body_background}}"/>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </t>
+
+    <t t-name="ylhc_setting.style_var">
+        <div class="style-item-var d-flex flex-column mr-3">
+            <div class="style-item-var-name-container d-flex align-items-center">
+                <span class="style-item-var-name"><t t-esc="_t(style_var.alias)" /></span>
+                <span class="style-item-var-help ms-1" t-att-title="style_var.help">
+                    <i class="fa fa-question-circle"/>
+                </span>
+            </div>
+
+            <ColorPicker t-if="style_var.type == 'color'" color="style_var.value" onChange="(color) => this._on_change_color(theme_style, style_var, color)" />
+
+            <div t-if="style_var.type == 'image'" class="style-item-var input-group mr-3">
+                <input type="text" t-model="style_var.image" class="form-control style_var" />
+                <span class="input-group-append">
+                    <span class="input-group-text fa fa-picture-o edit_item_var" t-on-click="()=>this._on_edit_style_var(style_var)">
+                        <i/>
+                    </span>
+                </span>
+            </div>
+
+            <div t-elif="style_var.type == 'svg'" class="style-item-var input-group mr-3">
+                <input type="text" t-model="style_var.svg" class="form-control style_var"/>
+                <span class="input-group-append">
+                    <span class="input-group-text fa fa-gg edit_item_var" t-on-click="()=>this._on_edit_style_var(style_var)">
+                        <i/>
+                    </span>
+                </span>
+            </div>
+
+            <div t-elif="style_var.type == 'image_url'" class="style-item-var input-group mr-3">
+                <input type="text" t-model="style_var.image_url" class="form-control style_var"/>
+                <span class="input-group-append">
+                    <span class="input-group-text fa fa-link edit_item_var" t-on-click="()=>this._on_edit_style_var(style_var)">
+                        <i/>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ylhc_setting.theme_style_tool_bar">
+        <div class="operation-toolbar d-flex align-items-center justify-content-center">
+
+            <!-- colone_style  -->
+            <span class="clone_style" t-on-click="() => this._clone_style()">
+                <t t-out="icons.clone_style"/>
+            </span>
+            
+            <!-- delete -->
+            <span t-if="state.show_delete_style" class="delete_style" t-on-click="() => this._delete_style()">
+                <t t-out="icons.delete_style"/>
+            </span>
+
+            <!-- image -->
+            <span class="set_bk_image" t-on-click="() => this._set_bk_image()">
+                <t t-out="icons.edit_image"/>
+            </span>
+
+        </div>
+    </t>
+
+</templates>

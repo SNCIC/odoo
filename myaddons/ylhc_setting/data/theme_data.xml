@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="ylhc_setting.default_style_01" model="ylhc_setting.theme_style">
+            <field name="name">Default 01</field>
+            <field name="is_default">True</field>
+            <field name="style_config">
+                <![CDATA[
+{
+  "categories": [
+    {
+      "name": "Side Bar",
+      "sequence": 0
+    },
+    {
+      "name": "Button",
+      "sequence": 1
+    }
+  ],
+  "variables": [
+    {
+      "name": "--ylhc-primary-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Primary Button",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary button color"
+    },
+    {
+      "name": "--ylhc-primary-text-color",
+      "type": "color",
+      "value": "#fff",
+      "alias": "Primary Text",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary text color"
+    },
+    {
+      "name": "--ylhc-primary-border-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Primary Border",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary border color"
+    },
+    {
+      "name": "--ylhc-primary-hover-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Primary Hover",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary hover color"
+    },
+    {
+      "name": "--ylhc-primary-hover-text-color",
+      "type": "color",
+      "value": "#fff",
+      "alias": "Primary Hover Text",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary hover text color"
+    },
+    {
+      "name": "--ylhc-primary-hover-border-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Primary Hover Border",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary hover border color"
+    },
+    {
+      "name": "--ylhc-secondary-color",
+      "type": "color",
+      "value": "#fff",
+      "alias": "Secondary Button",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary button color"
+    },
+    {
+      "name": "--ylhc-secondary-text-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Secondary Text",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary text color"
+    },
+    {
+      "name": "--ylhc-secondary-border-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Secondary Border",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary border color"
+    },
+    {
+      "name": "--ylhc-secondary-hover-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Secondary Hover",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary hover color"
+    },
+    {
+      "name": "--ylhc-secondary-hover-text-color",
+      "type": "color",
+      "value": "#fff",
+      "alias": "Secondary Hover Text",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary hover text color"
+    },
+    {
+      "name": "--ylhc-secondary-hover-border-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Secondary Hover Border",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary hover border color"
+    },
+    {
+      "name": "--ylhc-sidebar-header-bg",
+      "type": "color",
+      "value": "#393b60",
+      "alias": "Side Bar Header",
+      "category": "Side Bar",
+      "sequence": 10,
+      "help": "Primary button color"
+    },
+    {
+      "name": "--ylhc-sidebar-background-color",
+      "type": "color",
+      "identity": "side_bar_background",
+      "value": "#191B3B",
+      "alias": "Background",
+      "category": "Side Bar",
+      "sequence": 0,
+      "help": "Side bar background color"
+    },
+    {
+      "name": "sidebar-selected-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Selected",
+      "category": "Side Bar",
+      "sequence": 1,
+      "help": "Selected text color"
+    },
+    {
+      "name": "--sidebar-selected-badckground-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Side Bar Selected Background",
+      "category": "Side Bar",
+      "sequence": 1,
+      "help": "Side bar selected color"
+    }
+  ]
+}
+]]>
+            </field>
+        </record>
+
+        <record id="ylhc_setting.default_style_02" model="ylhc_setting.theme_style">
+            <field name="name">default style 02</field>
+            <field name="is_default">True</field>
+            <field name="style_config">
+                <![CDATA[
+{
+  "categories": [
+    {
+      "name": "Side Bar",
+      "sequence": 0
+    },
+    {
+      "name": "Button",
+      "sequence": 1
+    }
+  ],
+  "variables": [
+    {
+      "name": "--ylhc-primary-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Primary Button",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary button color"
+    },
+    {
+      "name": "--ylhc-primary-text-color",
+      "type": "color",
+      "value": "#fff",
+      "alias": "Primary Text",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary text color"
+    },
+    {
+      "name": "--ylhc-primary-border-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Primary Border",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary border color"
+    },
+    {
+      "name": "--ylhc-primary-hover-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Primary Hover",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary hover color"
+    },
+    {
+      "name": "--ylhc-primary-hover-text-color",
+      "type": "color",
+      "value": "#fff",
+      "alias": "Primary Hover Text",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary hover text color"
+    },
+    {
+      "name": "--ylhc-primary-hover-border-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Primary Hover Border",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Primary hover border color"
+    },
+    {
+      "name": "--ylhc-secondary-color",
+      "type": "color",
+      "value": "#fff",
+      "alias": "Secondary Button",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary button color"
+    },
+    {
+      "name": "--ylhc-secondary-text-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Secondary Text",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary text color"
+    },
+    {
+      "name": "--ylhc-secondary-border-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Secondary Border",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary border color"
+    },
+    {
+      "name": "--ylhc-secondary-hover-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Secondary Hover",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary hover color"
+    },
+    {
+      "name": "--ylhc-secondary-hover-text-color",
+      "type": "color",
+      "value": "#fff",
+      "alias": "Secondary Hover Text",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary hover text color"
+    },
+    {
+      "name": "--ylhc-secondary-hover-border-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Secondary Hover Border",
+      "category": "Button",
+      "sequence": 10,
+      "help": "Secondary hover border color"
+    },
+    {
+      "name": "--ylhc-sidebar-header-bg",
+      "type": "color",
+      "value": "#393b60",
+      "alias": "Side Bar Header",
+      "category": "Side Bar",
+      "sequence": 10,
+      "help": "Primary button color"
+    },
+    {
+      "name": "--ylhc-sidebar-background-color",
+      "type": "color",
+      "identity": "side_bar_background",
+      "value": "#191B3B",
+      "alias": "Background",
+      "category": "Side Bar",
+      "sequence": 0,
+      "help": "Side bar background color"
+    },
+    {
+      "name": "sidebar-selected-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Selected",
+      "category": "Side Bar",
+      "sequence": 1,
+      "help": "Selected text color"
+    },
+    {
+      "name": "--sidebar-selected-badckground-color",
+      "type": "color",
+      "value": "#676CB7",
+      "alias": "Side Bar Selected Background",
+      "category": "Side Bar",
+      "sequence": 1,
+      "help": "Side bar selected color"
+    }
+  ]
+}
+]]>
+            </field>
+        </record>
+
+        <!-- default mdoe 01 -->
+        <record id="ylhc_setting.default_mode_01" model="ylhc_setting.theme_mode">
+            <field name="name">default model 01</field>
+            <field name="mode_css">
+                <![CDATA[
+]]>
+            </field>
+            <field name="theme_styles" eval="[(6, 0, [ref('ylhc_setting.default_style_01')])]"/>
+        </record>
+
+        <!-- default mode 02 -->
+        <record id="ylhc_setting.default_mode_02" model="ylhc_setting.theme_mode">
+            <field name="name">default mode 02</field>
+            <field name="is_default">True</field>
+            <field name="active">True</field>
+            <field name="mode_css">
+                <![CDATA[
+
+]]>
+            </field>
+            <field name="theme_styles" eval="[(6, 0, [ref('ylhc_setting.default_style_02')])]"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+
+// radio box style2
+body.radio_style2, .theme_settings .radio_style2 {
+
+    .form-check-input[type=radio] {
+        border: 1px solid #e6e6e6;
+        border-radius: 30%;
+        background: #fff;
+        &:checked {
+            background-image: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M692.071703 329.86173c-48.372707-48.387034-112.705921-75.023694-181.146687-75.023694-68.440765 0-132.747373 26.63666-181.148733 75.023694-48.400337 48.374754-75.022671 112.707968-75.022671 181.123151s26.623357 132.74635 75.022671 181.146687c48.374754 48.402383 112.707968 75.023694 181.148733 75.023694 68.441788 0 132.745327-26.647917 181.146687-75.023694 48.427966-48.373731 75.024717-112.706945 75.024717-181.146687C767.096421 442.544115 740.447481 378.237507 692.071703 329.86173z' fill='%231296db'%3E%3C/path%3E%3C/svg%3E");
+        }
+    }
+}
+
+// radio box style3 
+body.radio_style3, .theme_settings .radio_style3 {
+    .form-check-input[type=radio] {
+        border-width: 1px;
+        border-radius: 30%;
+    }
+}
+
+// radio box style4
+body.radio_style4, .theme_settings .radio_style4 {
+    .form-check-input[type=radio] {
+        border-width: 1px;
+        border-radius: 50%;
+        background-color: #fff;
+        &:checked {
+            background-image: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M692.071703 329.86173c-48.372707-48.387034-112.705921-75.023694-181.146687-75.023694-68.440765 0-132.747373 26.63666-181.148733 75.023694-48.400337 48.374754-75.022671 112.707968-75.022671 181.123151s26.623357 132.74635 75.022671 181.146687c48.374754 48.402383 112.707968 75.023694 181.148733 75.023694 68.441788 0 132.745327-26.647917 181.146687-75.023694 48.427966-48.373731 75.024717-112.706945 75.024717-181.146687C767.096421 442.544115 740.447481 378.237507 692.071703 329.86173z' fill='%231296db'%3E%3C/path%3E%3C/svg%3E");
+        }
+    }
+}

@@ -1,0 +1,49 @@
+
+.theme_settings {
+  button.button_style1 {
+    border-radius: inherit;
+  }
+}
+
+// rounded style
+body.button_style2:not(.setting_preview), .theme_settings .button_style2 {
+    button {
+      border-radius: 50px;
+    }
+}
+
+// slant style
+body.button_style3:not(.setting_preview), .theme_settings .button_style3 {
+    /* CSS */
+    button {
+      border-radius: 0;
+      border-bottom-left-radius: 50px;
+      border-top-right-radius: 50px;
+    }
+}
+
+// slant style
+body.button_style4:not(.setting_preview), .theme_settings .button_style4 {
+    button {
+      border-radius: 0;
+      border-bottom-right-radius: 50px;
+      border-top-left-radius: 50px;
+    }
+    
+}
+
+body.button_style5:not(.setting_preview), .theme_settings .button_style5 {
+  button {
+    border-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
+
+body.button_style6:not(.setting_preview), .theme_settings .button_style6 {
+  button {
+    border-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}

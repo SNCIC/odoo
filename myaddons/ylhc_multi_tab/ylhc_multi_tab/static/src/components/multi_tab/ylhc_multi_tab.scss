@@ -1,0 +1,299 @@
+.ylhc_multi_tab_container {
+
+  line-height: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+  box-sizing: border-box;
+  z-index: 3;
+
+  .ylhc_multi_tab {
+    position: relative;
+    padding: 0 80px 0 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+
+    .ylhc_tab_scroll {
+
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .ylhc_page_items {
+        position: relative;
+        left: 0px;
+        ;
+        height: 100%;
+        flex: 1 1 auto;
+        background: rgb(255, 255, 255);
+        overflow: visible;
+        white-space: nowrap;
+        padding: 0px;
+
+        li {
+          display: inline-block;
+          *display: inline;
+          *zoom: 1;
+
+          vertical-align: middle;
+          font-size: 14px;
+          transition: all .2s;
+          -webkit-transition: all .2s;
+          min-width: 65px;
+          padding: 0 15px;
+          text-align: center;
+          cursor: pointer;
+
+          line-height: 40px;
+          max-width: 160px;
+          text-overflow: ellipsis;
+          padding-right: 40px;
+          overflow: hidden;
+          border-right: 1px solid #f6f6f6;
+          vertical-align: top;
+          position: relative;
+          white-space: nowrap;
+          padding: 0px 30px 0px 10px;
+          user-select: none;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            border-radius: 0;
+            background-color: #292B34;
+            transition: all .3s;
+            -webkit-transition: all .3s;
+          }
+
+          &.ylhc_multi_tab_active {
+            &::after {
+              width: 100%;
+            }
+          }
+
+          &:hover {
+            background-color: #f6f6f6;
+
+            &::after {
+              width: 100%;
+            }
+          }
+
+          .ylhc_tab_close {
+
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            margin: -8px 0 0 0;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            border-radius: 50%;
+            font-size: 12px;
+
+            &:first {
+              display: none;
+            }
+
+            &:hover {
+              background-color: #FF5722;
+              color: #fff;
+            }
+
+            svg {
+              margin-top: -2px;
+            }
+          }
+
+          &.active {
+            background-color: #f6f6f6;
+          }
+        }
+      }
+    }
+
+    .ylhc_tab_control {
+      width: 40px;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: all .3s;
+      -webkit-transition: all .3s;
+      box-sizing: border-box;
+      border-left: 1px solid #f6f6f6;
+
+      &:hover {
+        background-color: #f6f6f6;
+      }
+    }
+
+    .ylhc_icon_prev {
+      border-right: 1px solid #f6f6f6;
+      color: #666;
+      line-height: 40px;
+      margin: 0;
+      padding: 0;
+
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-font-smoothing: antialiased;
+      -webkit-transition: all .3s;
+
+      font-size: 16px;
+      font-style: normal;
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 40px;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      box-sizing: border-box;
+      border-left: none;
+      border-right: 1px solid #f6f6f6;
+    }
+
+    .ylhc_icon_next {
+      border-right: 1px solid #f6f6f6;
+      color: #666;
+      line-height: 40px;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      font-family: layui-icon !important;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      position: absolute;
+      top: 0;
+      width: 40px;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      -webkit-transition: all .3s;
+      box-sizing: border-box;
+      border-left: 1px solid #f6f6f6;
+      right: 40px;
+    }
+
+    .ylhc_icon_down {
+      //right: 1px;
+      color: #666;
+      line-height: 40px;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-transition: all .3s;
+      font-family: layui-icon !important;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      position: absolute;
+      top: 0;
+      width: 40px;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      box-sizing: border-box;
+      border-left: 1px solid #f6f6f6;
+      right: 0;
+
+      .dropdown-toggle {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+      }
+
+      .dropdown-menu {
+        .dropdown-item {
+          line-height: 30px;
+        }
+      }
+    }
+
+    .ylhc_multi_tab_active {
+      background-color: #f6f6f6;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-radius: 0;
+        background-color: #292B34;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    z-index: 1000;
+  }
+}
+
+.o_action_manager {
+  display: flex;
+  flex-direction: column;
+
+  .ylhc_tab_page_container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1 1 auto;
+
+    // > div {
+    //   flex: 1 1 auto;
+    //   overflow: auto;
+    //   display: flex;
+    //   flex-direction: column;
+    // }
+
+    .o_view_controller {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      overflow: hidden;
+      height: 100%;
+
+      .o_content {
+        overflow: auto;
+      }
+    }
+
+  }
+}
+
+.o_home_menu_background {
+  .ylhc_multi_tab_container {
+    display: none !important;
+  }
+}
+
+[name='product_template_id'] {
+  div, span {
+    width: 100% !important;
+    display: block !important;
+  }
+  span {
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+    text-overflow: initial !important;
+  }
+}
+
+
+td[name='product_id'] {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+  text-overflow: initial !important;
+}

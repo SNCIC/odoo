@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ylhc_side_menu.sidebar_app_item" t-inherit="ylhc_side_menu.sidebar_app_item">
+        <Dropdown t-if="state.collapsed">
+            <t t-set-slot="toggler">
+                <a class="app_item" t-att-class="{'active': state.active}" t-att-href="getMenuItemHref()" t-att-app-id="app.id">
+                    <t t-call="ylhc_side_menu.menu_icon" />
+                    <div class="o_caption app_name">
+                        <t t-esc="app.name" />
+                    </div>
+                </a>
+            </t>
+            <t t-foreach="app.childrenTree || []" t-as="menu_item" t-key="menu_item.id">
+                <t t-call="ylhc_sidebar_app_dropdown.app_dropdown_item">
+                    <t t-set="menu" t-value="menu_item" />
+                </t>
+            </t>
+        </Dropdown>
+        <a t-else="" class="app_item" t-att-class="{'active': state.active}" t-on-click.prevent="()=>this.click_app_item(app)" t-att-href="getMenuItemHref()" t-att-app-id="app.id">
+            <t t-call="ylhc_side_menu.menu_icon" />
+            <div class="o_caption app_name">
+                <t t-esc="app.name" />
+            </div>
+        </a>
+    </t>
+    
+    <t t-name="ylhc_sidebar_app_dropdown.app_dropdown_item" >
+        <t t-if="!menu.childrenTree.length">
+            <DropdownItem class="'o_menu_item'" onSelected="() => this.onItemSelected(menu)">
+                 <t t-esc="menu.name"/>
+            </DropdownItem>
+        </t>
+        <t t-else="">
+            <Dropdown>
+                <t t-set-slot="toggler">
+                    <a href="#">
+                        <span>
+                            <t t-esc="menu.name"/>
+                        </span>
+                        <i class="sub-menu-arrow fa" />
+                    </a>
+                </t>
+                <t t-foreach="menu.childrenTree" t-as="menu" t-key="menu.id">
+                    <t t-call="ylhc_sidebar_app_dropdown.app_dropdown_item" />
+                </t>
+            </Dropdown>
+        </t>
+    </t>
+    
+</templates>

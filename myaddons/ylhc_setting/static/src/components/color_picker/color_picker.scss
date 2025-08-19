@@ -1,0 +1,27 @@
+
+.style_color_item {
+
+    .sp-preview {
+        margin-right: 0px;
+    }
+
+    .sp-dd {
+        display: none;
+    }
+
+    .sp-preview {
+        width: 18px;
+        height: 12px;
+    }
+
+    .sp-replacer {
+        border-color: #dee2e6;
+        &:hover {
+            border-color: #dee2e6;
+        }
+    }
+}
+
+.sp-container {
+    border-color: #dee2e6;
+}

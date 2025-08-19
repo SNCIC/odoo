@@ -1,0 +1,31 @@
+// .ylhc_controller_container {
+//     overflow-y: hidden;
+
+//     .o_view_controller {
+//         display: flex;
+//         height: 100%;
+//         overflow: hidden;
+//         flex-direction: column;
+        
+//         .o_content {
+//             flex: 1 1 auto;
+//             overflow-y: scroll;
+//         }
+//     }
+// }
+
+// .o_action {
+//     display: flex;
+//     flex-direction: column;
+//     flex: 1 1 auto;
+//     height: 100%
+// }
+
+.o_action_manager_test {
+    direction: ltr;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    height: 100%;
+    overflow: hidden;
+}

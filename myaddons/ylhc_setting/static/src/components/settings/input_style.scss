@@ -1,0 +1,84 @@
+
+
+// input style1 normal
+body.input_style1:not(.setting_preview), .theme_settings .input_style1 {
+    input.o_input, .o_input {
+        border-width: 1px;
+        border-radius: 5px;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+// input style1 square
+body.input_style2:not(.setting_preview), .theme_settings .input_style2 {
+    input.o_input, .o_input {
+        border-width: 1px;
+        border-radius: 0;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+// input style3 line
+body.input_style3:not(.setting_preview), .theme_settings .input_style3 {
+    input.o_input, .o_input {
+        border: 0;
+        border-bottom: 1px solid #e6e6e6;
+        background: transparent;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+// input style4 slant
+body.input_style4:not(.setting_preview), .theme_settings .input_style4 {
+    input.o_input, .o_input {
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
+        padding-left: 15px;
+        padding-right: 15p;
+    }
+}
+
+// input style5 slant reverse
+body.input_style5:not(.setting_preview), .theme_settings .input_style5 {
+    input.o_input, .o_input {
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 50px;
+        padding-left: 15px;
+        padding-right: 15p;
+    }
+}
+
+// input style6 round
+body.input_style6:not(.setting_preview), .theme_settings .input_style6 {
+    input.o_input, .o_input {
+        border-radius: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+// input style7 line
+body.input_style7:not(.setting_preview), .theme_settings .input_style7 {
+    input.o_input, .o_input {
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding-left: 15px;
+        padding-right: 15p;
+    }
+}
+
+// input style4 slant
+body.input_style8:not(.setting_preview), .theme_settings .input_style8 {
+    input.o_input, .o_input {
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding-left: 15px;
+        padding-right: 15p;
+    }
+}

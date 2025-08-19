@@ -1,0 +1,1 @@
+this is base for anita themes

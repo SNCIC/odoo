@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <record id="ylhc_res_config_settings_form" model="ir.ui.view">
+            <field name="name">Theme Settings</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="-1"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside" >
+                    <app string="Theme Setting" name="ylhc_setting">
+
+                        <block title="Theme Mode" name="theme_setting_container">
+                            <setting id="setting_mode">
+                                <field name="theme_setting_mode"/>
+                            </setting>
+                        </block>
+
+                        <block title="Misc" name="misc_setting_container">
+
+                            <setting id="icon_policy">
+                                <field name="icon_policy"/>
+                            </setting>
+
+                            <setting id="window_default_title">
+                                <field name="window_default_title"/>
+                            </setting>
+
+                            <setting id="allow_debug">
+                                <field name="allow_debug"/>
+                            </setting>
+
+                            <setting id="powered_by">
+                                <field name="powered_by"/>
+                            </setting>
+                        </block>
+
+                    </app>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="awesome_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="ylhc_res_config_settings_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+    </data>
+</odoo>

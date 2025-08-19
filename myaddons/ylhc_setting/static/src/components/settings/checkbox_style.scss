@@ -1,0 +1,57 @@
+
+// check box style2
+body.checkbox_style1:not(.setting_preview),
+.theme_settings .checkbox_style2 {
+
+  .form-check-input[type=checkbox] {
+    &:checked {
+      background-color: transparent;
+      background-image: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' %3E%3Cpath d='M822.464 265.344a28.256 28.256 0 0 0-43.072 1.312l-352.96 417.664-181.92-212.992a28.288 28.288 0 0 0-43.104-1.088 37.12 37.12 0 0 0-0.96 48.256l204.096 238.944c5.76 6.752 13.696 10.56 22.016 10.56h0.096a29.088 29.088 0 0 0 22.048-10.656L823.68 313.6c11.52-13.728 11.008-35.328-1.216-48.256' p-id='3837'%3E%3C/path%3E%3C/svg%3E");
+    }
+  }
+}
+
+// check box style3
+body.checkbox_style3:not(.setting_preview),
+.theme_settings .checkbox_style3 {
+  .form-check-input[type=checkbox] {
+    border-radius: 50%;
+  }
+}
+
+// check box style4
+body.checkbox_style4:not(.setting_preview),
+.theme_settings .checkbox_style4 {
+  .form-check-input[type=checkbox] {
+    border-radius: 50%;
+
+    &:checked {
+      background-color: transparent;
+      background-image: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' %3E%3Cpath d='M822.464 265.344a28.256 28.256 0 0 0-43.072 1.312l-352.96 417.664-181.92-212.992a28.288 28.288 0 0 0-43.104-1.088 37.12 37.12 0 0 0-0.96 48.256l204.096 238.944c5.76 6.752 13.696 10.56 22.016 10.56h0.096a29.088 29.088 0 0 0 22.048-10.656L823.68 313.6c11.52-13.728 11.008-35.328-1.216-48.256' p-id='3837'%3E%3C/path%3E%3C/svg%3E");
+    }
+  }
+}
+
+
+// check box style
+body.checkbox_style5:not(.setting_preview),
+.theme_settings .checkbox_style5 {
+  .form-check-input[type=checkbox] {
+    border-radius: 0;
+  }
+}
+
+// check box style6
+// check box style4
+body.checkbox_style6:not(.setting_preview),
+.theme_settings .checkbox_style6 {
+  .form-check-input[type=checkbox] {
+    border-radius: 0;
+
+    &:checked {
+      background-color: transparent;
+      background-image: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' %3E%3Cpath d='M822.464 265.344a28.256 28.256 0 0 0-43.072 1.312l-352.96 417.664-181.92-212.992a28.288 28.288 0 0 0-43.104-1.088 37.12 37.12 0 0 0-0.96 48.256l204.096 238.944c5.76 6.752 13.696 10.56 22.016 10.56h0.096a29.088 29.088 0 0 0 22.048-10.656L823.68 313.6c11.52-13.728 11.008-35.328-1.216-48.256' p-id='3837'%3E%3C/path%3E%3C/svg%3E");
+    }
+  }
+
+}

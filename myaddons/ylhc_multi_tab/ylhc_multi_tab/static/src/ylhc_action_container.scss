@@ -1,0 +1,29 @@
+.ylhc_controller_container {
+    overflow-y: hidden;
+    flex: 1 1 auto;
+
+    .o_view_controller {
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+        flex-direction: column;
+        
+        .o_content {
+            flex: 1 1 auto;
+            overflow-y: auto;
+        }
+    }
+
+    .o_action {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        background-color: white;
+        .o_content {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            background-color: white;
+        }
+    }
+}

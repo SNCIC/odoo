@@ -1,0 +1,43 @@
+
+
+// separator style2
+body.separator_style2, .theme_settings .separator_style2 {
+    hr {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: 2px;
+        border: none;
+        border-bottom: 2px dotted rgba($purple, .25);
+        float: left;
+        width: 100vw;
+        ~ * {
+            clear: both;
+        }
+    }
+}
+
+// separator style3
+body.separator_style3, .theme_settings .separator_style3 {
+    hr {
+        border-top: 1px solid #8c8b8b;
+        border-bottom: 1px solid #fff;
+        width: 100%;
+    }
+}
+
+// separator style
+body.separator_style4, .theme_settings .separator_style4 {
+    hr {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: 2px;
+        border: none;
+        border-bottom: 2px dashed rgba($purple, .25);
+        float: left;
+        ~ * {
+            clear: both;
+        }
+    }
+}

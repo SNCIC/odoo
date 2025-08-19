@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ylhc_menu_form" model="ir.ui.view">
+        <field name="name">fuenc.menu_form</field>
+        <field name="model">ir.ui.menu</field>
+        <field name="inherit_id" ref="base.edit_menu_access"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='web_icon_data']" position="replace" />
+            <xpath expr="//field[@name='web_icon']" position="replace">
+                <field name="web_icon"/>
+                <field name="web_icon_data"/>
+                <field name="font_icon" />
+                <field name="svg_icon"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
