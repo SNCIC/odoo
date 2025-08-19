@@ -1,3 +1,0 @@
-"id","sequence","name","auto_apply","vat_required","country_id","country_group_id","name@cs"
-"fiscal_position_domestic_cz","1","Domestic partners","1","1","base.cz","","Domácí partneři"
-"fiscal_position_eu_private_cz","2","Private trade with the EU","1","","","account.europe_vat","Soukromý obchod s EU"
