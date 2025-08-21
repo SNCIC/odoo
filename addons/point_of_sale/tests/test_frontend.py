@@ -2229,6 +2229,47 @@ class TestUi(TestPointOfSaleHttpCommon):
         self.main_pos_config.with_user(self.pos_user).open_ui()
         self.start_tour("/pos/ui?config_id=%d" % self.main_pos_config.id, 'test_barcode_search_attributes_preset', login="pos_user")
 
+    def test_auto_validate_force_done(self):
+        self.main_pos_config.write({
+            'auto_validate_terminal_payment': True
+        })
+        self.start_tour("/pos/ui?config_id=%d" % self.main_pos_config.id, 'test_auto_validate_force_done', login="pos_user")
+
+    def test_pos_ui_round_globally(self):
+        self.main_pos_config.company_id.tax_calculation_rounding_method = 'round_globally'
+        tax_16 = self.env['account.tax'].create({
+            'name': 'Tax 16%',
+            'amount': 16,
+        })
+        self.env['product.product'].create([{
+            'name': 'Test Product 1',
+            'list_price': 7051.73,
+            'taxes_id': [(6, 0, [tax_16.id])],
+            'available_in_pos': True,
+        }, {
+            'name': 'Test Product 2',
+            'list_price': 352.59,
+            'taxes_id': [(6, 0, [tax_16.id])],
+            'available_in_pos': True,
+        }])
+        self.main_pos_config.with_user(self.pos_user).open_ui()
+        self.start_tour("/pos/ui?config_id=%d" % self.main_pos_config.id, 'test_pos_ui_round_globally', login="pos_user")
+
+        pos_session = self.main_pos_config.current_session_id
+        self.assertEqual(pos_session.order_ids[0].payment_ids[0].amount, 7771.01)
+
+        # Close the session and check the session journal entry.
+        pos_session.action_pos_session_validate()
+
+        lines = pos_session.move_id.line_ids.sorted('balance')
+
+        self.assertEqual(len(lines), 5, "There should be 5 lines in the session journal entry")
+        self.assertAlmostEqual(lines[0].balance, -7051.73)
+        self.assertAlmostEqual(lines[1].balance, -1128.28)
+        self.assertAlmostEqual(lines[2].balance, 56.41)
+        self.assertAlmostEqual(lines[3].balance, 352.59)
+        self.assertAlmostEqual(lines[4].balance, 7771.01)
+
     def test_quantity_package_of_non_basic_unit(self):
         test_uom_unit = self.env['uom.uom'].create({
             "name": "test unit uom",
@@ -2548,6 +2589,42 @@ class TestUi(TestPointOfSaleHttpCommon):
             login="pos_user",
         )
 
+    def test_fast_payment_validation_from_product_screen_without_automatic_receipt_printing(self):
+        self.main_pos_config.write({
+            'use_fast_payment': True,
+            'fast_payment_method_ids': [(6, 0, self.bank_payment_method.ids)],
+        })
+        self.main_pos_config.with_user(self.pos_user).open_ui()
+        self.start_pos_tour('test_fast_payment_validation_from_product_screen_without_automatic_receipt_printing')
+        order1 = self.main_pos_config.current_session_id.order_ids[0]
+        order2 = self.main_pos_config.current_session_id.order_ids[1]
+        self.assertEqual(order1.state, 'paid', "The order should be paid after the fast payment validation")
+        self.assertEqual(len(order1.payment_ids), 1, "There should be one payment line used for the fast payment")
+        self.assertEqual(order1.payment_ids.payment_method_id, self.bank_payment_method, "The payment method used should be the bank payment method")
+        self.assertEqual(order2.state, 'paid', "The order should be paid")
+        self.assertEqual(len(order2.payment_ids), 1, "There should be one payment line")
+        self.assertEqual(order2.payment_ids.payment_method_id, self.bank_payment_method, "The payment method used should be the bank payment method")
+
+    def test_fast_payment_validation_from_product_screen_with_automatic_receipt_printing(self):
+        self.main_pos_config.write({
+            'use_fast_payment': True,
+            'fast_payment_method_ids': [(6, 0, self.bank_payment_method.ids)],
+            'iface_print_auto': True,
+            'iface_print_skip_screen': True,
+            'other_devices': True,
+            'epson_printer_ip': '127.0.0.1:8069/receipt_receiver',
+        })
+        self.main_pos_config.with_user(self.pos_user).open_ui()
+        self.start_pos_tour('test_fast_payment_validation_from_product_screen_with_automatic_receipt_printing')
+        order1 = self.main_pos_config.current_session_id.order_ids[0]
+        order2 = self.main_pos_config.current_session_id.order_ids[1]
+        self.assertEqual(order1.state, 'paid', "The order should be paid after the fast payment validation")
+        self.assertEqual(len(order1.payment_ids), 1, "There should be one payment line used for the fast payment")
+        self.assertEqual(order1.payment_ids.payment_method_id, self.bank_payment_method, "The payment method used should be the bank payment method")
+        self.assertEqual(order2.state, 'paid', "The order should be paid")
+        self.assertEqual(len(order2.payment_ids), 1, "There should be one payment line")
+        self.assertEqual(order2.payment_ids.payment_method_id, self.bank_payment_method, "The payment method used should be the bank payment method")
+
     def test_consistent_refund_process_between_frontend_and_backend(self):
         """
         Ensure that the partial refund process is consistent between the frontend and backend.
@@ -2718,6 +2795,71 @@ class TestUi(TestPointOfSaleHttpCommon):
             'combo_ids': [Command.link(combo.id)],
         })
         self.start_tour("/pos/ui?config_id=%d" % self.main_pos_config.id, 'test_combo_variant_mix', login="pos_user")
+
+    def test_cross_exclusion_attribute_values(self):
+        """ If you create a product with two attributes and 2 values for each attribute, and you exclude one value of the first attribute with one value of the second attribute
+        and vice versa, you should still be able to select the other values of the attributes. """
+        self.attribute_1 = self.env['product.attribute'].create({
+            'name': 'attribute_1',
+            'create_variant': 'no_variant',
+        })
+
+        self.attribute_2 = self.env['product.attribute'].create({
+            'name': 'attribute_2',
+            'create_variant': 'no_variant',
+        })
+
+        self.attribute_1_value_1 = self.env['product.attribute.value'].create({
+            'name': 'attribute_1_value_1',
+            'attribute_id': self.attribute_1.id,
+        })
+        self.attribute_1_value_2 = self.env['product.attribute.value'].create({
+            'name': 'attribute_1_value_2',
+            'attribute_id': self.attribute_1.id,
+        })
+        self.attribute_2_value_1 = self.env['product.attribute.value'].create({
+            'name': 'attribute_2_value_1',
+            'attribute_id': self.attribute_2.id,
+        })
+        self.attribute_2_value_2 = self.env['product.attribute.value'].create({
+            'name': 'attribute_2_value_2',
+            'attribute_id': self.attribute_2.id,
+        })
+
+        self.test_product_1 = self.env['product.template'].create({
+            'name': 'Test Product 1',
+            'available_in_pos': True,
+            'list_price': 10.0,
+            'attribute_line_ids': [
+                (0, 0, {
+                    'attribute_id': self.attribute_1.id,
+                    'value_ids': [(6, 0, [self.attribute_1_value_1.id, self.attribute_1_value_2.id])],
+                }),
+                (0, 0, {
+                    'attribute_id': self.attribute_2.id,
+                    'value_ids': [(6, 0, [self.attribute_2_value_1.id, self.attribute_2_value_2.id])],
+                }),
+            ],
+        })
+
+        # Test the exclusion of attribute values
+        ptav_1_1 = self.test_product_1.attribute_line_ids.filtered(lambda l: l.attribute_id.id == self.attribute_1.id).product_template_value_ids.filtered(lambda v: v.product_attribute_value_id.id == self.attribute_1_value_1.id)
+        ptav_1_2 = self.test_product_1.attribute_line_ids.filtered(lambda l: l.attribute_id.id == self.attribute_1.id).product_template_value_ids.filtered(lambda v: v.product_attribute_value_id.id == self.attribute_1_value_2.id)
+        ptav_2_2 = self.test_product_1.attribute_line_ids.filtered(lambda l: l.attribute_id.id == self.attribute_2.id).product_template_value_ids.filtered(lambda v: v.product_attribute_value_id.id == self.attribute_2_value_2.id)
+        ptav_2_1 = self.test_product_1.attribute_line_ids.filtered(lambda l: l.attribute_id.id == self.attribute_2.id).product_template_value_ids.filtered(lambda v: v.product_attribute_value_id.id == self.attribute_2_value_1.id)
+        self.env['product.template.attribute.exclusion'].create({
+            'product_tmpl_id': self.test_product_1.id,
+            'product_template_attribute_value_id': ptav_1_1.id,
+            'value_ids': [Command.set([ptav_2_1.id])],
+        })
+
+        self.env['product.template.attribute.exclusion'].create({
+            'product_tmpl_id': self.test_product_1.id,
+            'product_template_attribute_value_id': ptav_1_2.id,
+            'value_ids': [Command.set([ptav_2_2.id])],
+        })
+        self.main_pos_config.with_user(self.pos_user).open_ui()
+        self.start_pos_tour('test_cross_exclusion_attribute_values')
 
 
 # This class just runs the same tests as above but with mobile emulation

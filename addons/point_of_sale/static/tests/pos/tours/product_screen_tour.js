@@ -19,6 +19,7 @@ import * as Utils from "@point_of_sale/../tests/pos/tours/utils/common";
 import * as BackendUtils from "@point_of_sale/../tests/pos/tours/utils/backend_utils";
 import * as combo from "@point_of_sale/../tests/pos/tours/utils/combo_popup_util";
 import { generatePreparationReceipts } from "@point_of_sale/../tests/pos/tours/utils/preparation_receipt_util";
+import * as FeedbackScreen from "@point_of_sale/../tests/pos/tours/utils/feedback_screen_util";
 
 registry.category("web_tour.tours").add("ProductScreenTour", {
     steps: () =>
@@ -897,6 +898,49 @@ registry.category("web_tour.tours").add("test_preset_timing_retail", {
         ].flat(),
 });
 
+registry
+    .category("web_tour.tours")
+    .add("test_fast_payment_validation_from_product_screen_without_automatic_receipt_printing", {
+        steps: () =>
+            [
+                Chrome.startPoS(),
+                Dialog.confirm("Open Register"),
+                ProductScreen.clickDisplayedProduct("Desk Organizer"),
+                ProductScreen.clickFastPaymentButton("Bank"),
+                ReceiptScreen.isShown(),
+                ReceiptScreen.clickNextOrder(),
+                ProductScreen.clickDisplayedProduct("Desk Organizer"),
+                ProductScreen.clickPayButton(),
+                PaymentScreen.clickPaymentMethod("Bank"),
+                PaymentScreen.clickValidate(),
+                ReceiptScreen.isShown(),
+            ].flat(),
+    });
+
+registry
+    .category("web_tour.tours")
+    .add("test_fast_payment_validation_from_product_screen_with_automatic_receipt_printing", {
+        steps: () =>
+            [
+                Chrome.startPoS(),
+                Dialog.confirm("Open Register"),
+                ProductScreen.clickDisplayedProduct("Desk Organizer"),
+                ProductScreen.clickFastPaymentButton("Bank"),
+                FeedbackScreen.isShown(),
+                Dialog.confirm(),
+                FeedbackScreen.clickScreen(),
+                ProductScreen.isShown(),
+                ProductScreen.clickDisplayedProduct("Desk Organizer"),
+                ProductScreen.clickPayButton(),
+                PaymentScreen.clickPaymentMethod("Bank"),
+                PaymentScreen.clickValidate(),
+                FeedbackScreen.isShown(),
+                Dialog.confirm(),
+                FeedbackScreen.clickScreen(),
+                ProductScreen.isShown(),
+            ].flat(),
+    });
+
 registry.category("web_tour.tours").add("test_only_existing_lots", {
     steps: () =>
         [
@@ -971,6 +1015,26 @@ registry.category("web_tour.tours").add("test_load_pos_demo_data_by_pos_user", {
                 content: "Click Ok on the Access Denied dialog box",
                 run: "click",
             },
+            Chrome.endTour(),
+        ].flat(),
+});
+
+registry.category("web_tour.tours").add("test_pos_ui_round_globally", {
+    steps: () =>
+        [
+            Chrome.startPoS(),
+            Dialog.confirm("Open Register"),
+            ProductScreen.clickDisplayedProduct("Test Product 1"),
+            ProductScreen.clickDisplayedProduct("Test Product 2"),
+            inLeftSide([
+                ...["+/-"].map(Numpad.click),
+                ...ProductScreen.selectedOrderlineHasDirect("Test Product 2", "-1.0"),
+            ]),
+            ProductScreen.totalAmountIs("7,771.01"),
+            ProductScreen.clickPayButton(),
+            PaymentScreen.clickPaymentMethod("Bank"),
+            PaymentScreen.clickValidate(),
+            ReceiptScreen.isShown(),
             Chrome.endTour(),
         ].flat(),
 });

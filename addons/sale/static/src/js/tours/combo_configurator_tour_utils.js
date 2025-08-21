@@ -11,8 +11,7 @@ function comboItemSelector(comboItemName, extraClasses=[]) {
     const extraClassesSelector = extraClasses.map(extraClass => `.${extraClass}`).join('');
     return `
         .sale-combo-configurator-dialog
-        .combo-item-grid
-        .product-card${extraClassesSelector}:has(.card-title:contains("${comboItemName}"))
+        .product-card${extraClassesSelector}:has(h6:contains("${comboItemName}"))
     `;
 }
 
@@ -34,7 +33,7 @@ function assertComboItemCount(comboName, count) {
         content: `Assert that there are ${count} combo items in combo ${comboName}`,
         trigger: comboSelector(comboName),
         run() {
-            const selector = `${comboSelector(comboName)} + .combo-item-grid .product-card`;
+            const selector = `${comboSelector(comboName)} + .row .product-card`;
             if (queryAll(selector).length !== count) {
                 console.error(`Assertion failed`);
             }
@@ -47,7 +46,20 @@ function assertSelectedComboItemCount(count) {
         content: `Assert that there are ${count} selected combo items`,
         trigger: '.sale-combo-configurator-dialog',
         run() {
-            const selector = `.sale-combo-configurator-dialog .combo-item-grid .product-card.selected`;
+            const selector = `.sale-combo-configurator-dialog .row .product-card.selected`;
+            if (queryAll(selector).length !== count) {
+                console.error(`Assertion failed`);
+            }
+        },
+    };
+}
+
+function assertPreselectedComboItemCount(count) {
+    return {
+        content: `Assert that there are ${count} preselected combo items`,
+        trigger: '.sale-combo-configurator-dialog',
+        run() {
+            const selector = '.sale-combo-configurator-dialog div[name="preselected_product_name"]';
             if (queryAll(selector).length !== count) {
                 console.error(`Assertion failed`);
             }
@@ -67,6 +79,13 @@ function assertComboItemSelected(comboItemName) {
     return {
         content: `Assert that combo item ${comboItemName} is selected`,
         trigger: comboItemSelector(comboItemName, ['selected']),
+    };
+}
+
+function assertComboItemPreselected(comboItemName) {
+    return {
+        content: `Assert that combo item ${comboItemName} is preselected`,
+        trigger: `[name="preselected_product_name"]:contains(${comboItemName})`,
     };
 }
 
@@ -174,8 +193,10 @@ export default {
     assertComboCount,
     assertComboItemCount,
     assertSelectedComboItemCount,
+    assertPreselectedComboItemCount,
     selectComboItem,
     assertComboItemSelected,
+    assertComboItemPreselected,
     increaseQuantity,
     decreaseQuantity,
     setQuantity,
