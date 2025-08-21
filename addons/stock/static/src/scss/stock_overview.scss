@@ -11,7 +11,13 @@
     .o_kanban_record {
         margin-left: 4px;
         margin-right: 4px;
-    }
+
+        //ylhc-add
+        @include media-breakpoint-down(md) {
+            --KanbanGroup-width: auto;
+            --KanbanRecord-width: auto;
+        }
+    }    
 }
 
 .stock-overview-links {

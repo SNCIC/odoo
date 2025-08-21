@@ -14,6 +14,12 @@
             }
         }
 
+        //ylhc-add
+        @include media-breakpoint-down(md) {
+            --KanbanGroup-width: auto;
+            --KanbanRecord-width: auto;
+        }
+
         .o_dashboard_star {
             font-size: 12px;
 

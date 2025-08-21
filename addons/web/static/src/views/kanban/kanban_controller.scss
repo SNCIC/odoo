@@ -353,8 +353,11 @@
             margin: calc(var(--KanbanRecord-margin-v) * 0.5) var(--KanbanRecord-margin-h);
 
             @include media-breakpoint-down(md) {
-                margin: 0 0 #{-$border-width};
-                flex-basis: 100%;
+                // margin: 0 0 #{-$border-width};
+                // flex-basis: 100%;
+                
+                //ylhc-add
+                margin:5px 10px;
             }
 
             &.o_kanban_ghost {
