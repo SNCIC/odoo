@@ -35,7 +35,7 @@
     'license': 'OPL-1',
 
     'category': 'Themes/Backend',
-    'version': '17.0.0.3',
+    'version': '18.5.0.3',
     'price': 999,
 
     'depends': ['web'],

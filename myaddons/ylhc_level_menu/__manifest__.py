@@ -14,7 +14,7 @@
     'website': "https://www.yourcompany.com",
 
     'category': 'apps/extra',
-    'version': '17.0.0.2',
+    'version': '18.5.0.2',
 
     'depends': ['base', 'web'],
 

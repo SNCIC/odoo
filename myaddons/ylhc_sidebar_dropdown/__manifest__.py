@@ -14,7 +14,7 @@
     'website': "https://www.ylhctech.com",
 
     'category': 'apps/side_menu',
-    'version': '17.0.0.1',
+    'version': '18.5.0.1',
 
     'depends': ['base', 'web', 'ylhc_theme'],
     'data': [],

@@ -17,7 +17,7 @@
     'live_test_url': 'https://www.ylhctec.com',
 
     'category': 'Backend/Theme',
-    'version': '18.0.0.1',
+    'version': '18.5.0.1',
     'license': 'OPL-1',
     'images': ['static/description/banner.png',
                'static/description/ylhc_screenshot.png'],

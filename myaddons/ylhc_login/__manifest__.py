@@ -14,7 +14,7 @@
     'website': "https://www.openerpnext.com",
 
     'category': 'Theme/Backend',
-    'version': '17.0.0.3',
+    'version': '18.5.0.3',
     'license': 'OPL-1',
     'images': [
         'static/description/banner.png',

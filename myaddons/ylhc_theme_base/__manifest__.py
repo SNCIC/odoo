@@ -28,7 +28,7 @@
     'support': 'codercrax@gmail.com',
     'maintainer': 'ylhctec',
     'category': 'Theme/Backend',
-    'version': '17.0.0.3',
+    'version': '18.5.0.3',
 
     'installable': True,
     'application': True,
